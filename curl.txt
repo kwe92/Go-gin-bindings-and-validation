@@ -1,0 +1,30 @@
+Valid request payload
+
+curl -X POST localhost:8000/register \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "id": "1001a",
+   "firstName": "John",
+   "lastName": "Mark",
+   "email": "jmark@example.com",
+   "phoneNumber": "+11234567890",
+   "countryCode": "US",
+   "ssn":"123-45-6789"
+    }'
+
+
+Invalid Request payload 
+
+curl -i -H "Content-Type: application/json" \
+    -X POST \
+    http://localhost:8000/register \
+    -d '{
+    "id":1001.2,
+   "firstName": "John",
+   "lastName": "Mark",
+   "email": "jmark@example.com",
+   "phoneNumber": "+1123456780",
+   "countryCode": "US"
+    }'
+
+
